@@ -1,9 +1,7 @@
 package com.rok.leetcode;
 
-import java.util.ArrayList;
-import java.util.List;
 
-public class AddTwoNumbers {
+public class _002_AddTwoNumbers {
 
     public static void main(String[] args) throws InterruptedException {
         int[] firstNum = {2,5,6,9,1,5,7,8,4};

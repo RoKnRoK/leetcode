@@ -6,7 +6,7 @@ import java.util.Arrays;
  * Created by RoK on 18.07.2016.
  * All rights reserved =)
  */
-public class MedianOfTwoSortedArrays {
+public class _004_MedianOfTwoSortedArrays {
     public static void main(String[] args) {
 //        int[] nums1 = {1, 5, 8, 12, 17};
 //        int[] nums2 = {1, 2, 13, 14, 15, 16, 17, 18, 19, 20};
