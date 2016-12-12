@@ -21,7 +21,8 @@ public class _007_ReverseInteger {
         int N = 1000000;
         for (int i = 0; i < N; i++){
             timer = System.nanoTime();
-            result = reverse2(-1452736301);
+//            result = reverse2(-1452736301);
+            result = reverse(-145273631);
 //            result = reverse2(1232342359);
 //        result = reverse2(-145273637);
 //        result = reverse2(100);
