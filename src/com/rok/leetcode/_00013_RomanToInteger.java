@@ -8,6 +8,7 @@ import java.util.Map;
  * Created by RoK.
  * All rights reserved =)
  */
+@SuppressWarnings("unused")
 public class _00013_RomanToInteger {
 
     private static Map<Character, Integer> romanToInt = new HashMap<>();
