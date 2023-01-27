@@ -8,7 +8,7 @@ import java.util.List;
  * Created by RoK on 15.07.2016.
  * All rights reserved =)
  */
-public class _005_LongestPalindromeSubstring {
+public class _00005_LongestPalindromeSubstring {
     public static void main(String[] args) {
         System.out.println(longestPalindrome("ajdkasjdakkadjsaskdks"));
         System.out.println(longestPalindrome("aj"));

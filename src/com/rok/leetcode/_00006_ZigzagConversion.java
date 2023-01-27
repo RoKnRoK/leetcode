@@ -6,7 +6,7 @@ import java.util.Arrays;
  * Created by rkulikov on 19.07.16.
  * All rights reserved (c) =)
  */
-public class _006_ZigzagConversion {
+public class _00006_ZigzagConversion {
     public static void main(String[] args) {
         convert("ABCDEFGHIJKLMNOPQRSTUVWXYZ", 5);
 //        convert("ABCD", 3);

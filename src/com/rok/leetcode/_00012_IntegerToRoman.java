@@ -7,7 +7,7 @@ import java.util.Map;
  * Created by RoK.
  * All rights reserved =)
  */
-public class _012_IntegerToRoman {
+public class _00012_IntegerToRoman {
 
     private static Map<Integer, String> intToRoman = new HashMap<>();
 

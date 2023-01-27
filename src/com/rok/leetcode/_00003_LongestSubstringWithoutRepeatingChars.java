@@ -4,7 +4,7 @@ package com.rok.leetcode;
  * Created by RoK on 19.07.2016.
  * All rights reserved =)
  */
-public class _003_LongestSubstringWithoutRepeatingChars {
+public class _00003_LongestSubstringWithoutRepeatingChars {
     public int lengthOfLongestSubstring(String s) {
         int strLength = s.length();
         String saved = "";

@@ -4,7 +4,7 @@ package com.rok.leetcode;
  * Created by RoK.
  * All rights reserved =)
  */
-public class _009_PalindromeNumber {
+public class _00009_PalindromeNumber {
     public static void main(String[] args) {
         System.out.println(isPalindrome(1567));
         System.out.println(isPalindrome(-19));

@@ -7,7 +7,7 @@ import java.util.Objects;
  * Created by rkulikov on 19.07.16.
  * All rights reserved (c) =)
  */
-public class _008_StringToInteger {
+public class _00008_StringToInteger {
     private static long[] tenDegrees = new long[]{1, 10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000, 10000000000L};
 
     public static void main(String[] args) {

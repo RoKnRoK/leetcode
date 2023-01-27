@@ -6,7 +6,7 @@ import java.util.*;
  * Created by RoK on 19.07.2016.
  * All rights reserved =)
  */
-public class _001_TwoSum {
+public class _00001_TwoSum {
     public static void main(String[] args) {
         int[] nums = {7, 8, 2, 15};
 //        int[] nums = {0,4,3,0};
