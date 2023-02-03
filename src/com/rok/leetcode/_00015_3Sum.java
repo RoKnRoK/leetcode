@@ -27,9 +27,8 @@ public class _00015_3Sum {
 
         int i = 0, j, k;
 
-        int first = - Integer.MAX_VALUE;
-        int second = - Integer.MAX_VALUE;
 
+        int first = - Integer.MAX_VALUE;
         while (nums[i] <= 0){
             if (i == nums.length - 2) {
                 break;
@@ -41,6 +40,7 @@ public class _00015_3Sum {
                 first = nums[i];
             }
             j = i + 1;
+            int second = - Integer.MAX_VALUE;
             while (j < nums.length - 1){
                 if (nums[j] == second) {
                     j++;
