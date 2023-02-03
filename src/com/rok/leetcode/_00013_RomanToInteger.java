@@ -35,39 +35,46 @@ public class _00013_RomanToInteger {
         int result = 0;
         for (int i = s.length() - 1; i >= 0; i--) {
             switch (s.charAt(i)) {
-                case 'I' : {
+                case 'I': {
                     if (prev == 'V' || prev == 'X') {
                         result -= 1;
                     } else {
                         result += 1;
                     }
-                } break;
-                case 'V' : {
+                }
+                break;
+                case 'V': {
                     result += 5;
-                } break;
-                case 'X' : {
+                }
+                break;
+                case 'X': {
                     if (prev == 'L' || prev == 'C') {
                         result -= 10;
                     } else {
                         result += 10;
                     }
-                } break;
-                case 'L' : {
+                }
+                break;
+                case 'L': {
                     result += 50;
-                } break;
-                case 'C' : {
+                }
+                break;
+                case 'C': {
                     if (prev == 'D' || prev == 'M') {
                         result -= 100;
                     } else {
                         result += 100;
                     }
-                } break;
-                case 'D' : {
+                }
+                break;
+                case 'D': {
                     result += 500;
-                } break;
-                case 'M' : {
+                }
+                break;
+                case 'M': {
                     result += 1000;
-                } break;
+                }
+                break;
             }
             prev = s.charAt(i);
         }
@@ -82,7 +89,7 @@ public class _00013_RomanToInteger {
             int koeff = (current == 'I' && (prev == 'V' || prev == 'X')) ||
                     (current == 'X' && (prev == 'L' || prev == 'C')) ||
                     (current == 'C' && (prev == 'D' || prev == 'M')) ? -1 : 1;
-            result += koeff*romanToInt.get(current);
+            result += koeff * romanToInt.get(current);
             prev = current;
         }
         return result;

@@ -36,7 +36,7 @@ public class _00017_LetterCombinationsOfPhoneNumber {
     public static List<String> letterCombinations(String digits) {
         List<String> result = new ArrayList<>();
         List<List<String>> lists = new ArrayList<>();
-        for (char digit : digits.toCharArray()){
+        for (char digit : digits.toCharArray()) {
             lists.add(numbers.get(digit));
         }
         return cartesianProduct(lists).stream().filter(f -> !f.isEmpty()).collect(Collectors.toList());

@@ -1,6 +1,8 @@
 package com.rok.leetcode;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by RoK on 19.07.2016.
@@ -34,11 +36,14 @@ public class _00001_TwoSum {
         for (int i = 0; i < nums.length; i++) {
             difference = target - nums[i];
             Integer possibleIndex = numsAsSet.get(difference);
-            if (possibleIndex == null) { continue;}
+            if (possibleIndex == null) {
+                continue;
+            }
             if (possibleIndex == i) {
                 Integer duplicateIndex = duplicates.get(difference);
-                if (duplicateIndex == null) {continue;}
-                else {
+                if (duplicateIndex == null) {
+                    continue;
+                } else {
                     result[0] = i;
                     result[1] = duplicateIndex;
                     return result;
@@ -56,28 +61,30 @@ public class _00001_TwoSum {
 
         int length = nums.length;
         int[] resultIndicesInSortedArray = new int[2];
-        int[] resultIndices = {Integer.MIN_VALUE,Integer.MIN_VALUE};
-        int [] copyOfNums = Arrays.copyOf(nums, length);
+        int[] resultIndices = {Integer.MIN_VALUE, Integer.MIN_VALUE};
+        int[] copyOfNums = Arrays.copyOf(nums, length);
         Arrays.sort(copyOfNums);
 
         int difference;
         Integer secondIndex;
         for (int i = 0; i < length; i++) {
             difference = target - copyOfNums[i];
-            secondIndex = Arrays.binarySearch(copyOfNums, i+1, length, difference);
+            secondIndex = Arrays.binarySearch(copyOfNums, i + 1, length, difference);
             if (secondIndex > 0) {
-                resultIndicesInSortedArray[0] = i; resultIndicesInSortedArray[1] = secondIndex;
+                resultIndicesInSortedArray[0] = i;
+                resultIndicesInSortedArray[1] = secondIndex;
                 break;
             }
         }
         for (int i = 0; i < length; i++) {
             if (nums[i] == copyOfNums[resultIndicesInSortedArray[0]] && (resultIndices[0] < 0)) {
                 resultIndices[0] = i;
-            }
-            else if (nums[i] == copyOfNums[resultIndicesInSortedArray[1]] && (resultIndices[1] < 0)) {
+            } else if (nums[i] == copyOfNums[resultIndicesInSortedArray[1]] && (resultIndices[1] < 0)) {
                 resultIndices[1] = i;
             }
-            if (resultIndices[0] + resultIndices[1] > 0) {break;}
+            if (resultIndices[0] + resultIndices[1] > 0) {
+                break;
+            }
         }
         return resultIndices;
     }

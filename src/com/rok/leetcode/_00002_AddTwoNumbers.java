@@ -4,8 +4,8 @@ package com.rok.leetcode;
 public class _00002_AddTwoNumbers {
 
     public static void main(String[] args) throws InterruptedException {
-        int[] firstNum = {2,5,6,9,1,5,7,8,4};
-        int[] secondNum = {6,5,9,4,6,8,2,9};
+        int[] firstNum = {2, 5, 6, 9, 1, 5, 7, 8, 4};
+        int[] secondNum = {6, 5, 9, 4, 6, 8, 2, 9};
 
         ListNode node1 = convert(firstNum);
         ListNode node2 = convert(secondNum);
@@ -32,7 +32,7 @@ public class _00002_AddTwoNumbers {
         ListNode result = new ListNode(numbers[0]);
         ListNode firstNode = result;
         for (int i = 1; i < numbers.length; i++) {
-            result.next =  new ListNode(numbers[i]);
+            result.next = new ListNode(numbers[i]);
             result = result.next;
         }
         return firstNode;
@@ -40,9 +40,9 @@ public class _00002_AddTwoNumbers {
 
     private static long convertToLong(ListNode node) {
         int multiplier = 1;
-        long result=0;
-        while (node != null){
-            result += node.val*multiplier;
+        long result = 0;
+        while (node != null) {
+            result += node.val * multiplier;
             multiplier *= 10;
             node = node.next;
         }
@@ -65,9 +65,13 @@ public class _00002_AddTwoNumbers {
             int mod = transfer ? (sum - 10) : sum;
 
             resultNode = new ListNode(mod);
-            if (previousResultNode != null) {previousResultNode.next = resultNode;}
+            if (previousResultNode != null) {
+                previousResultNode.next = resultNode;
+            }
             previousResultNode = resultNode;
-            if (counter == 1) {result = resultNode;}
+            if (counter == 1) {
+                result = resultNode;
+            }
 
             currentNode1 = currentNode1 == null ? null : currentNode1.next;
             currentNode2 = currentNode2 == null ? null : currentNode2.next;
@@ -75,7 +79,8 @@ public class _00002_AddTwoNumbers {
 
         if (transfer) {
             resultNode.next = new ListNode(1);
-        } return result;
+        }
+        return result;
     }
 
     public static ListNode addTwoNumbers2(ListNode currentNode1, ListNode currentNode2) {
@@ -86,7 +91,7 @@ public class _00002_AddTwoNumbers {
 
         boolean firstGreater = true;
         while (largerNode != null || lesserNode != null) {
-            if (largerNode == null){
+            if (largerNode == null) {
                 firstGreater = false;
             }
 
@@ -97,8 +102,7 @@ public class _00002_AddTwoNumbers {
         if (firstGreater) {
             largerNode = currentNode1;
             lesserNode = currentNode2;
-        }
-        else {
+        } else {
             largerNode = currentNode2;
             lesserNode = currentNode1;
         }
@@ -111,8 +115,9 @@ public class _00002_AddTwoNumbers {
             transfer = sum >= 10;
 
             largerNode.val = transfer ? (sum - 10) : sum;
-            if (largerNode.next != null && transfer) {largerNode.next.val++;}
-            else if (largerNode.next == null) break;
+            if (largerNode.next != null && transfer) {
+                largerNode.next.val++;
+            } else if (largerNode.next == null) break;
 
 
             largerNode = largerNode.next;
@@ -133,8 +138,7 @@ public class _00002_AddTwoNumbers {
 
         String temp = Long.toString(sum);
         int[] nums = new int[temp.length()];
-        for (int i = 0; i < temp.length(); i++)
-        {
+        for (int i = 0; i < temp.length(); i++) {
             nums[i] = temp.charAt(i) - '0';
         }
         return convert(nums);
@@ -143,7 +147,10 @@ public class _00002_AddTwoNumbers {
     static class ListNode {
         int val;
         ListNode next;
-        ListNode(int x) { val = x; }
+
+        ListNode(int x) {
+            val = x;
+        }
 
         @Override
         public String toString() {

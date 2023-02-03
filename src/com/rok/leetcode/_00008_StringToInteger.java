@@ -1,6 +1,5 @@
 package com.rok.leetcode;
 
-import java.util.Arrays;
 import java.util.Objects;
 
 /**
@@ -43,22 +42,24 @@ public class _00008_StringToInteger {
         str = str.trim();
         if (str.length() == 0) {
 //            System.out.println(0);
-            return  0;
+            return 0;
         }
 
-        if (Objects.equals(str, Integer.toString(-Integer.MAX_VALUE))) {return -Integer.MAX_VALUE;}
+        if (Objects.equals(str, Integer.toString(-Integer.MAX_VALUE))) {
+            return -Integer.MAX_VALUE;
+        }
 
 
         char[] asChar = str.toCharArray();
-        int shift = (asChar[0] ==  '-' ? 1 : (asChar[0] ==  '+' ? 1 : 0));
-        boolean negative = asChar[0] ==  '-';
+        int shift = (asChar[0] == '-' ? 1 : (asChar[0] == '+' ? 1 : 0));
+        boolean negative = asChar[0] == '-';
         char leftChar, rightChar;
-        int leftRank, rightRank= 0;
+        int leftRank, rightRank = 0;
         long leftResult = 0, rightResult = 0, finalResult = 0;
 
-        for (int fromLeftToRight=shift, fromRightToLeft= asChar.length-1;
-             fromLeftToRight<asChar.length || fromRightToLeft>shift;
-             fromLeftToRight++, fromRightToLeft--){
+        for (int fromLeftToRight = shift, fromRightToLeft = asChar.length - 1;
+             fromLeftToRight < asChar.length || fromRightToLeft > shift;
+             fromLeftToRight++, fromRightToLeft--) {
             leftChar = asChar[fromLeftToRight];
             rightChar = asChar[fromRightToLeft];
 
@@ -67,12 +68,12 @@ public class _00008_StringToInteger {
                     return 0;
                 }
                 leftRank = fromLeftToRight;
-                if (leftRank-1 > 10) {
+                if (leftRank - 1 > 10) {
                     finalResult = Integer.MAX_VALUE;
                     break;
                 }
-                for (int back = leftRank - 1; back >= shift; back--){
-                    leftResult += (asChar[back] - 48) * tenDegrees[leftRank-1 - back];
+                for (int back = leftRank - 1; back >= shift; back--) {
+                    leftResult += (asChar[back] - 48) * tenDegrees[leftRank - 1 - back];
                 }
                 finalResult = leftResult;
                 break;
@@ -84,11 +85,10 @@ public class _00008_StringToInteger {
 
             if (rightRank > 10) {
                 rightResult = Integer.MAX_VALUE;
-            }
-            else {
+            } else {
                 rightResult += (rightChar - 48) * tenDegrees[rightRank];
             }
-            rightRank ++;
+            rightRank++;
             finalResult = rightResult;
 //            System.out.println(leftResult+", " + rightResult);
         }

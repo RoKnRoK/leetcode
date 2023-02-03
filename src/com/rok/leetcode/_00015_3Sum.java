@@ -1,7 +1,9 @@
 package com.rok.leetcode;
 
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Created by RoK.
@@ -12,13 +14,13 @@ public class _00015_3Sum {
 
 
     public static void main(String[] args) {
-        System.out.println(threeSum(new int[]{-1,0,1,2,-1,-4}));
-        System.out.println(threeSum(new int[]{-4, -1, -1,0,1,2}));
-        System.out.println(threeSum(new int[]{1,1,-2}));
-        System.out.println(threeSum(new int[]{-1,-1,-1}));
-        System.out.println(threeSum(new int[]{-1,-1,2}));
-        System.out.println(threeSum(new int[]{0,0,0}));
-        System.out.println(threeSum(new int[]{0,0,0,0,0,0}));
+        System.out.println(threeSum(new int[]{-1, 0, 1, 2, -1, -4}));
+        System.out.println(threeSum(new int[]{-4, -1, -1, 0, 1, 2}));
+        System.out.println(threeSum(new int[]{1, 1, -2}));
+        System.out.println(threeSum(new int[]{-1, -1, -1}));
+        System.out.println(threeSum(new int[]{-1, -1, 2}));
+        System.out.println(threeSum(new int[]{0, 0, 0}));
+        System.out.println(threeSum(new int[]{0, 0, 0, 0, 0, 0}));
     }
 
     public static List<List<Integer>> threeSum(int[] nums) {
@@ -28,8 +30,8 @@ public class _00015_3Sum {
         int i = 0, j, k;
 
 
-        int first = - Integer.MAX_VALUE;
-        while (nums[i] <= 0){
+        int first = -Integer.MAX_VALUE;
+        while (nums[i] <= 0) {
             if (i == nums.length - 2) {
                 break;
             }
@@ -40,15 +42,15 @@ public class _00015_3Sum {
                 first = nums[i];
             }
             j = i + 1;
-            int second = - Integer.MAX_VALUE;
-            while (j < nums.length - 1){
+            int second = -Integer.MAX_VALUE;
+            while (j < nums.length - 1) {
                 if (nums[j] == second) {
                     j++;
                     continue;
                 } else {
                     second = nums[j];
                 }
-                k = Arrays.binarySearch(nums, j+1, nums.length,  - (nums[i] + nums[j]));
+                k = Arrays.binarySearch(nums, j + 1, nums.length, -(nums[i] + nums[j]));
                 if (k >= 0) {
                     first = nums[i];
                     second = nums[j];

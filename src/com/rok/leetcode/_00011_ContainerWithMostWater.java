@@ -7,7 +7,7 @@ package com.rok.leetcode;
 @SuppressWarnings("unused")
 public class _00011_ContainerWithMostWater {
     public static void main(String[] args) {
-        System.out.println(maxArea(new int[]{1,8,6,2,5,4,8,3,7}));
+        System.out.println(maxArea(new int[]{1, 8, 6, 2, 5, 4, 8, 3, 7}));
         System.out.println(maxArea(new int[]{1, 1}));
 
     }
@@ -15,8 +15,8 @@ public class _00011_ContainerWithMostWater {
     //intuitive solution - time limit exceeded
     public static int maxAreaIntuintive(int[] height) {
         int maxArea = 0;
-        for (int i = 0; i< height.length - 1; i++) {
-            for (int j = i+1; j< height.length; j++) {
+        for (int i = 0; i < height.length - 1; i++) {
+            for (int j = i + 1; j < height.length; j++) {
                 int area = (j - i) * Math.min(height[i], height[j]);
                 if (area > maxArea) {
                     maxArea = area;
@@ -35,13 +35,13 @@ public class _00011_ContainerWithMostWater {
         for (int i = 0; i < height.length; i++) {
             for (int j = height.length - 1; j > i; j--) {
                 if (height[j] >= height[i]) {
-                    maxArea = Math.max(maxArea, (j-i)*height[i]);
+                    maxArea = Math.max(maxArea, (j - i) * height[i]);
                     break;
                 }
             }
             for (int j = 0; j < i; j++) {
                 if (height[j] >= height[i]) {
-                    maxArea = Math.max(maxArea, (i-j)*height[i]);
+                    maxArea = Math.max(maxArea, (i - j) * height[i]);
                     break;
                 }
             }

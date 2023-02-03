@@ -12,16 +12,16 @@ public class _00016_3SumClosest {
 
 
     public static void main(String[] args) {
-        System.out.println(threeSumClosest(new int[]{-1,2,1,-4}, 1));
-        System.out.println(threeSumClosest(new int[]{-1,0,1,2,-1,-4}, 1));
-        System.out.println(threeSumClosest(new int[]{-4, -1, -1,0,1,2}, 2));
-        System.out.println(threeSumClosest(new int[]{1,1,-2}, 2));
-        System.out.println(threeSumClosest(new int[]{-1,-1,-1}, 3));
-        System.out.println(threeSumClosest(new int[]{-1,-1,2}, 1));
-        System.out.println(threeSumClosest(new int[]{0,0,0}, 1));
-        System.out.println(threeSumClosest(new int[]{0,0,0,0,0,0}, 2));
-        System.out.println(threeSumClosest(new int[]{1,1,1,1}, 0));
-        System.out.println(threeSumClosest(new int[]{-1000,-5,-5,-5,-5,-5,-5,-1,-1,-1}, -14));
+        System.out.println(threeSumClosest(new int[]{-1, 2, 1, -4}, 1));
+        System.out.println(threeSumClosest(new int[]{-1, 0, 1, 2, -1, -4}, 1));
+        System.out.println(threeSumClosest(new int[]{-4, -1, -1, 0, 1, 2}, 2));
+        System.out.println(threeSumClosest(new int[]{1, 1, -2}, 2));
+        System.out.println(threeSumClosest(new int[]{-1, -1, -1}, 3));
+        System.out.println(threeSumClosest(new int[]{-1, -1, 2}, 1));
+        System.out.println(threeSumClosest(new int[]{0, 0, 0}, 1));
+        System.out.println(threeSumClosest(new int[]{0, 0, 0, 0, 0, 0}, 2));
+        System.out.println(threeSumClosest(new int[]{1, 1, 1, 1}, 0));
+        System.out.println(threeSumClosest(new int[]{-1000, -5, -5, -5, -5, -5, -5, -1, -1, -1}, -14));
     }
 
     public static Integer threeSumClosest(int[] nums, int target) {
@@ -32,8 +32,8 @@ public class _00016_3SumClosest {
         int minDistance = Integer.MAX_VALUE;
         int minSum = Integer.MAX_VALUE;
 
-        int first = - Integer.MAX_VALUE;
-        while (i < nums.length - 2){
+        int first = -Integer.MAX_VALUE;
+        while (i < nums.length - 2) {
             if (nums[i] == first) {
                 i++;
                 continue;
@@ -41,15 +41,15 @@ public class _00016_3SumClosest {
                 first = nums[i];
             }
             j = i + 1;
-            int second = - Integer.MAX_VALUE;
-            while (j < nums.length - 1){
+            int second = -Integer.MAX_VALUE;
+            while (j < nums.length - 1) {
                 if (nums[j] == second) {
                     j++;
                     continue;
                 } else {
                     second = nums[j];
                 }
-                k = Arrays.binarySearch(nums, j+1, nums.length,  target - (nums[i] + nums[j]));
+                k = Arrays.binarySearch(nums, j + 1, nums.length, target - (nums[i] + nums[j]));
                 if (k >= 0) {
                     first = nums[i];
                     second = nums[j];
@@ -58,7 +58,7 @@ public class _00016_3SumClosest {
                     int insertPoint = -k - 1;
                     int distance;
                     if (insertPoint == nums.length) {
-                        distance = nums[i] + nums[j] + nums[insertPoint-1];
+                        distance = nums[i] + nums[j] + nums[insertPoint - 1];
                     } else if (insertPoint == j + 1) {
                         distance = nums[i] + nums[j] + nums[insertPoint];
                     } else {

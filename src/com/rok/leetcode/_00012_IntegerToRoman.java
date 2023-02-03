@@ -44,6 +44,7 @@ public class _00012_IntegerToRoman {
         intToRoman.put(2000, "MM");
         intToRoman.put(3000, "MMM");
     }
+
     public static void main(String[] args) {
         System.out.println(intToRoman(3));
         System.out.println(intToRoman(58));
@@ -52,8 +53,8 @@ public class _00012_IntegerToRoman {
 
     public static String intToRoman(int num) {
         return intToRoman.get(num / 1000 * 1000) +
-          intToRoman.get(num / 100 % 10 * 100) +
-          intToRoman.get(num / 10 % 10 * 10) +
-          intToRoman.get(num % 10);
+                intToRoman.get(num / 100 % 10 * 100) +
+                intToRoman.get(num / 10 % 10 * 10) +
+                intToRoman.get(num % 10);
     }
 }
